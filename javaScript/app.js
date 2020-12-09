@@ -14,7 +14,7 @@ var tableListParent = document.getElementById('table');
 
 
 // Contructor Start
-function Store (name, min, max, avg) {
+function Store(name, min, max, avg) {
   this.name = name;
   this.min = min;
   this.max = max;
@@ -58,214 +58,58 @@ Store.prototype.render = function () {
   trElement.appendChild(tdElement);
 };
 
-new Store ('Seattle', 23, 65, 6.3);
-new Store ('Tokyo', 3, 24, 1.2);
-allStores[0].render();
-allStores[1].render();
 
-// console.log(seattleStoreTableTest);
-// seattleStoreTableTest();
-// elements from DOM - Lists - DOM is our index page?
-// var seattleList = document.getElementById('seattle');
-// object literals 
+// Table Header Test Below
+function tableHeader() {
+  var table = document.getElementById('table');
+  var header = table.createTHead();
+  var row = header.insertRow(0);
+  var cell = row.insertCell(0);
+  cell.innerHTML = hours;
+}
+tableHeader();
 
-// object 1/Store 1
-// var seattleStore = {
-//   name: 'Seattle',
-//   min: 23,
-//   max: 65,
-//   avg: 6.3,
-//   hourlySales: [],
-//   dailyTotal: 0,
-//   getRandomNumber: function () {
-//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-//   },
-//   calculateHourlySales: function () {
-//     // we are going to get a random number of customers. multiply number of customers by the average sales/hour, THEN add that hourly total to the hourlySalesArray
-//     for (var i = 0; i < hours.length; i++) {
-//       var customers = this.getRandomNumber();
-//       // console.log(customers);
-//       var hourTotal = Math.ceil(customers * this.avg);
-//       // console.log(hourTotal);
-//       this.hourlySales.push(hourTotal);
-//       this.dailyTotal += hourTotal;
+//Code Found online
+// let tableHeader = document.querySelector('table');
+// let data = Object.keys(hours[0]);
+// generateTableHead(tableHeader);
+// const vm = {};
+// vm.lines = hours.length;
+
+// const headers = vm.lines[0];
+// const data = vm.lines.slice(1);
+
+// const columns = data.reduce((newColumns, row) => {
+//   for(let i=0;i<hours.length;i++){
+//     if(newColumns.length-1 < i) {
+//       newColumns.push([]);
 //     }
-//   },
-//   render: function () {
-//     this.calculateHourlySales();
-//     // iteratively render alist item
-//     // create an element
-//     for (var i = 0; i < this.hourlySales.length; i++) {
-//       var tdElement = document.createElement('li');
-//       // give it content
-//       tdElement.textContent = `${hours[i]}: ${this.hourlySales[i]} cookies`;
-//       // apend it to the DOM
-//       seattleListParent.appendChild(tdElement);
-//       // render daily total
-//     }
+//     newColumns[i].push(row[i]);
 //   }
-// };
-// executable
-// seattleStore.render();
+//   return newColumns;
+// }, []);
 
-// // object 2/store 2
-// var tokyoStore = {
-//   name: 'Tokyo',
-//   min: 3,
-//   max: 24,
-//   avg: 1.2,
-//   hourlySales: [],
-//   dailyTotal: 0,
-//   getRandomNumber: function () {
-//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-//   },
-//   calculateHourlySales: function () {
-//     // we are going to get a random number of customers. multiply number of customers by the average sales/hour, THEN add that hourly total to the hourlySalesArray
-//     for (var i = 0; i < hours.length; i++) {
-//       var customers = this.getRandomNumber();
-//       // console.log(customers);
-//       var hourTotal = Math.ceil(customers * this.avg);
-//       // console.log(hourTotal);
-//       this.hourlySales.push(hourTotal);
-//       this.dailyTotal += hourTotal;
-//     }
-//   },
-//   render: function () {
-//     this.calculateHourlySales();
-//     // iteratively render alist item
-//     // create an element
-//     for (var i = 0; i < this.hourlySales.length; i++) {
-//       var tdElement = document.createElement('li');
-//       // give it content
-//       tdElement.textContent = `${hours[i]}: ${this.hourlySales[i]} cookies`;
-//       // apend it to the DOM
-//       tokyoListParent.appendChild(tdElement);
-//       // render daily total
-//     }
-//   }
-// };
-// // executable
-// tokyoStore.render();
+// const columnsWithHeaders = headers.map((header, index) => ({[header]:columns[index]}));
 
 
 
-// //object 3/store 3
-// var dubaiStore = {
-//   name: 'Seattle',
-//   min: 11,
-//   max: 38,
-//   avg: 2.3,
-//   hourlySales: [],
-//   dailyTotal: 0,
-//   getRandomNumber: function () {
-//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-//   },
-//   calculateHourlySales: function () {
-//     // we are going to get a random number of customers. multiply number of customers by the average sales/hour, THEN add that hourly total to the hourlySalesArray
-//     for (var i = 0; i < hours.length; i++) {
-//       var customers = this.getRandomNumber();
-//       // console.log(customers);
-//       var hourTotal = Math.ceil(customers * this.avg);
-//       // console.log(hourTotal);
-//       this.hourlySales.push(hourTotal);
-//       this.dailyTotal += hourTotal;
-//     }
-//   },
-//   render: function () {
-//     this.calculateHourlySales();
-//     // iteratively render alist item
-//     // create an element
-//     for (var i = 0; i < this.hourlySales.length; i++) {
-//       var tdElement = document.createElement('li');
-//       // give it content
-//       tdElement.textContent = `${hours[i]}: ${this.hourlySales[i]} cookies`;
-//       // apend it to the DOM
-//       dubaiListParent.appendChild(tdElement);
-//       // render daily total
-//     }
-//   }
-// };
-// // executable
-// dubaiStore.render();
+new Store('Seattle', 23, 65, 6.3);
+new Store('Tokyo', 3, 24, 1.2);
+new Store('Dubai', 11, 38, 2.3);
+new Store('Paris', 20, 38, 2.3);
+new Store('Lima', 2, 16, 4.6);
 
+function renderStores() {
+  for (var i = 0; i <= allStores.length; i++) {
+    allStores[i].render();
+  }
+}
+renderStores();
+// allStores[0].render();
+// allStores[1].render();
+// allStores[2].render();
+// i.render();
+// renderList: function () {
 
-// //object 4/store 4
-// var parisStore = {
-//   name: 'Seattle',
-//   min: 20,
-//   max: 38,
-//   avg: 2.3,
-//   hourlySales: [],
-//   dailyTotal: 0,
-//   getRandomNumber: function () {
-//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-//   },
-//   calculateHourlySales: function () {
-//     // we are going to get a random number of customers. multiply number of customers by the average sales/hour, THEN add that hourly total to the hourlySalesArray
-//     for (var i = 0; i < hours.length; i++) {
-//       var customers = this.getRandomNumber();
-//       // console.log(customers);
-//       var hourTotal = Math.ceil(customers * this.avg);
-//       // console.log(hourTotal);
-//       this.hourlySales.push(hourTotal);
-//       this.dailyTotal += hourTotal;
-//     }
-//   },
-//   render: function () {
-//     this.calculateHourlySales();
-//     // iteratively render alist item
-//     // create an element
-//     for (var i = 0; i < this.hourlySales.length; i++) {
-//       var tdElement = document.createElement('li');
-//       // give it content
-//       tdElement.textContent = `${hours[i]}: ${this.hourlySales[i]} cookies`;
-//       // apend it to the DOM
-//       parisListParent.appendChild(tdElement);
-//       // render daily total
-//     }
-//   }
-// };
-// // executable
-// parisStore.render();
-
-
-// //object 5/store 5
-// var limaStore = {
-//   name: 'Seattle',
-//   min: 2,
-//   max: 16,
-//   avg: 4.6,
-//   hourlySales: [],
-//   dailyTotal: 0,
-//   getRandomNumber: function () {
-//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-//   },
-//   calculateHourlySales: function () {
-//     // we are going to get a random number of customers. multiply number of customers by the average sales/hour, THEN add that hourly total to the hourlySalesArray
-//     for (var i = 0; i < hours.length; i++) {
-//       var customers = this.getRandomNumber();
-//       // console.log(customers);
-//       var hourTotal = Math.ceil(customers * this.avg);
-//       // console.log(hourTotal);
-//       this.hourlySales.push(hourTotal);
-//       this.dailyTotal += hourTotal;
-//     }
-//   },
-//   render: function () {
-//     this.calculateHourlySales();
-//     // iteratively render alist item
-//     // create an element
-//     for (var i = 0; i < this.hourlySales.length; i++) {
-//       var tdElement = document.createElement('li');
-//       // give it content
-//       tdElement.textContent = `${hours[i]}: ${this.hourlySales[i]} cookies`;
-//       // apend it to the DOM
-//       limaListParent.appendChild(tdElement);
-//       // render daily total
-//     }
-//   }
-// };
-// // executable
-// limaStore.render();
-
+// }
 

@@ -16,3 +16,7 @@ td, th {
 tr:nth-child(even) {
   background-color: teal;
 }
+
+h3 {
+  text-align: center;
+}
