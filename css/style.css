@@ -1,8 +1,173 @@
+/* Entire Doc */
+
 body {
-  background-color: yellow;
+  
+  background-color: rgba(255, 255, 0, 0.611);
+}
+
+h3 {
+  text-align: center;
+}
+
+/* Header */
+
+header nav {
+  width: 960px;
+  height: 100px;
+  /* z-index: 50; */
+}
+
+header h1 {
+  font: 'tangerine', serif;
+  text-align: center;
+  background: pink;
+  background-color: orangered;
+  padding: 10px;
+  width: 100%;
+}
+
+.navImage {
+  width: 100px;
+  height: auto;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.navImage2 {
+  width: 100px;
+  height: auto;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  float: right;
+  transform: rotateY(180deg)
+}
+
+header nav span {
+  display: inline-block;
+  line-height: 100px;
+  margin-left: 90px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* header span:nth-child(2) {
+  margin-left: 30px;
+} */
+
+nav a {
+  text-decoration: none;
+  color: orange
+}
+
+/* Main */
+
+main {
+  width: 960px;
+  display: block;
+}
+
+main ul {
+  text-align: center;
+}
+
+main ol {
+  float: left;
+}
+
+hr solid {
+  border-top: 40px solid #bbb;
+  width: 1000px;
+}
+
+.container-family {
+  margin-top: 70px;
+  border: 3px solid black;
+  padding: 20px 40px 40px;
+  max-width: 640px;
+  margin-left: 120px;
+
+}
+
+.container-family-image {
+    display: inline-block;
+    vertical-align: top;
+    width: 46%;
+    margin: 20px 30px 0 0;
+  }
+  .container-text {
+    display: inline-block;
+    width: 46%;
+    @media (max-width: 620px) {
+      width:100%;
+    }
+  }
+
+/* #family {
+  margin-left: 100px;
+  background-color: rgb(0, 0, 0);
+  border: 10px solid black;
+  width: 300px;
+  float: left;
+}
+
+#family-text {
+  float: right;
+} */
+main img {
+  margin-top: 100px;
+  width: 200px;
+  display: inline-block;
+  text-align: center;
+}
+
+/* main li img {
+  widows: 100px;
+  height:auto;
+  float: left;
+  padding: 10px;
+  text-align: center;
+
+} */
+
+main li img {
+  padding-right: 25px;
+}
+
+#menu-outer {
+  height: 84px;
+  display: inline;
+}
+
+.table2 {
+  display: table;
+  margin: 0 auto;
+}
+
+ul#horizontal-list {
+  min-width: 960px;
+  list-style: none;
+  margin-right: 100px;
+  padding: 20px;
+}
+
+ul#horizontal-list li {
+  display: inline;
+}
+
+/* Section */
+
+section {
+  float: left;
+}
+
+/* Table */
+main h3 {
+  margin-top: 50px;
 }
 
 table {
+  margin:50px 10px 10px 50px;
   border-collapse: collapse;
   width: 100%;
 }
@@ -15,8 +180,4 @@ td, th {
 
 tr:nth-child(even) {
   background-color: teal;
-}
-
-h3 {
-  text-align: center;
 }
