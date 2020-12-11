@@ -3,13 +3,18 @@
 // global variables
 // Hours of operation
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+var tfoot = document.createElement('tfoot');
+
 // console.log(hours);
 var allStores = [];
 var tableListParent = document.getElementById('table');
 var tableHeader = document.getElementById('header');
 
-
-// Contructor Start
+// Form Code
+var containerParent = document.getElementById('container');
+var myForm = document.getElementById('form');
+console.log(containerParent);
+// Contructor Start for Table
 function Store(name, min, max, avg) {
   this.name = name;
   this.min = min;
@@ -95,9 +100,26 @@ function tableFooterRender() {
   thElement = document.createElement('th');
   thElement.textContent = totalOfTotals;
   trElement.appendChild(thElement);
-  tableListParent.appendChild(trElement);
+  tfoot.appendChild(trElement);
+  tableListParent.appendChild(tfoot);
 }
 
+// form start - event Handler
+function handleSubmit(event){
+  event.preventDefault();
+
+  var name = event.target.name.value;
+  var min = parseInt(event.target.min.value);
+  var max = parseInt(event.target.max.value);
+  var avg = parseInt(event.target.avg.value);
+
+  var newStore = new Store(name, min, max, avg);
+  newStore.render();
+  tfoot.innerHTML = '';
+  tableFooterRender();
+}
+
+// instantiations
 new Store('Seattle', 23, 65, 6.3);
 new Store('Tokyo', 3, 24, 1.2);
 new Store('Dubai', 11, 38, 2.3);
@@ -112,3 +134,6 @@ function renderStores() {
   tableFooterRender();
 }
 renderStores();
+
+// event listener for form
+myForm.addEventListener('submit', handleSubmit);

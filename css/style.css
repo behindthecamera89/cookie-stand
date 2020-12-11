@@ -25,7 +25,12 @@ header h1 {
   padding: 10px;
   width: 100%;
 }
+/*  form  */
+#container {
+  margin-top: 50px;
+  text-align: center
 
+}
 .navImage {
   width: 100px;
   height: auto;

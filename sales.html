@@ -24,17 +24,38 @@
         </div>
       </div>
     </nav>
-  </nav>
+    </nav>
   </header>
   <main>
+    <!-- Form Here -->
+    <div main id="container">
+      <form id="form">
+        <fieldset>
+          <legend>Add New Stores Below</legend>
+          <label> Store Name
+            <input type="text" name="name" placeholder="ex: Store Name">
+          </label>
+
+          <label> Min Hourly Customers
+            <input type="number" name="min">
+          </label>
+          
+          <label for="max">Max Hourly Customers</label>
+          <input type="number" name="max">
+          <label for="avg">Average Cookie Sales</label>
+          <input type="float" name="avg">
+
+          <button type="submit">Enter</button>
+      </form>
+    </div>
+    <!-- End of Form -->
     <h3>Store Table Chart</h3>
     <table id="table">
       <thead id="header"></thead>
-      <tfoot id="tfooter"></tfoot>
+      <!-- <tfoot id="tfooter"></tfoot> -->
     </table>
   </main>
   <script src="javaScript/app.js" type="text/javascript"></script>
 </body>
 
 </html>
-
